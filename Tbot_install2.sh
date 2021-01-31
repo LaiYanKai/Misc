@@ -11,11 +11,8 @@ sudo rosdep init
 rosdep update
 #Install and build TurtleBot3 packages. 
 sudo apt update
-sudo apt install ros-melodic-rosserial-python ros-melodic-tf --yes
+sudo apt install ros-melodic-rosserial-python ros-melodic-tf ros-melodic-hls-lfcd-lds-driver ros-melodic-turtlebot3-msgs ros-melodic-dynamixel-sdk --yes
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
-sudo apt install ros-melodic-hls-lfcd-lds-driver --yes
-sudo apt install ros-melodic-turtlebot3-msgs --yes
-sudo apt install ros-melodic-dynamixel-sdk --yes
 git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 cd ~/catkin_ws/src/turtlebot3
 rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/
