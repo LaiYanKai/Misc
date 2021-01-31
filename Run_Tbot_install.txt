@@ -1,0 +1,12 @@
+sudo wget -O ~/Tbot_install.sh https://raw.githubusercontent.com/LaiYanKai/EE4308/main/Tbot_install.sh
+sudo wget -O ~/Tbot_install2.sh https://raw.githubusercontent.com/LaiYanKai/EE4308/main/Tbot_install2.sh
+sudo chmod +x ~/Tbot_install.sh ~/Tbot_install2.sh
+~/Tbot_install.sh
+#reboot
+~/Tbot_install2.sh
+
+# 1. Key in password !Control1
+# 2. Key in password !Control1
+
+
+# update IP then source ~/.bashrc
