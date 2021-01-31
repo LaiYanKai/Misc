@@ -23,6 +23,10 @@ echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 cd ~/catkin_ws && catkin_make -j1
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
+echo '# Remote PC IP' >> ~/.bashrc
+echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
+echo '# Turtlebot IP' >> ~/.bashrc
+echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
 source ~/.bashrc
 # USB Port Setting
 rosrun turtlebot3_bringup create_udev_rules
