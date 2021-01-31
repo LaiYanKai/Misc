@@ -5,6 +5,7 @@ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_
 chmod 755 ./install_ros_melodic_rp3.sh
 bash ./install_ros_melodic_rp3.sh
 #Install and build TurtleBot3 packages. 
+sudo apt update
 sudo apt install ros-melodic-rosserial-python ros-melodic-tf --yes
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
 sudo apt install ros-melodic-hls-lfcd-lds-driver --yes
