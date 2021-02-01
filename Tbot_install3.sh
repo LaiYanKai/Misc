@@ -45,3 +45,7 @@ tar -xvf opencr_update.tar.bz2
 cd ./opencr_update
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
 cd ~
+
+sudo apt install wireless-tools --yes
+# restore wifi
+source Tbot_reinstall_wifi.sh
