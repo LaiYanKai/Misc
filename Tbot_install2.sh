@@ -11,8 +11,11 @@ sudo rosdep init
 rosdep update
 #Install and build TurtleBot3 packages. 
 sudo apt update
-sudo apt install ros-melodic-rosserial-python ros-melodic-tf ros-melodic-hls-lfcd-lds-driver ros-melodic-turtlebot3-msgs ros-melodic-dynamixel-sdk --yes
+sudo apt install ros-melodic-rosserial-python ros-melodic-tf
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
+sudo apt install ros-melodic-hls-lfcd-lds-driver
+sudo apt install ros-melodic-turtlebot3-msgs
+sudo apt install ros-melodic-dynamixel-sdk
 git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 cd ~/catkin_ws/src/turtlebot3
 rm -r turtlebot3_description/ turtlebot3_teleop/ turtlebot3_navigation/ turtlebot3_slam/ turtlebot3_example/
@@ -21,10 +24,6 @@ echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 cd ~/catkin_ws && catkin_make -j1
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
-echo '# Remote PC IP' >> ~/.bashrc
-echo 'export ROS_MASTER_URI=http://localhost:11311' >> ~/.bashrc
-echo '# Turtlebot IP' >> ~/.bashrc
-echo 'export ROS_HOSTNAME=localhost' >> ~/.bashrc
 source ~/.bashrc
 # USB Port Setting
 rosrun turtlebot3_bringup create_udev_rules
