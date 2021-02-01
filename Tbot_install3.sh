@@ -1,7 +1,13 @@
 #Install ROS Melodic Morenia
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt update
+
+#sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+#sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+#sudo apt update
+sudo apt-get update
+sudo apt-get upgrade
+wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_melodic_rp3.sh
+chmod 755 ./install_ros_melodic_rp3.sh
+bash ./install_ros_melodic_rp3.sh
 sudo apt install ros-melodic-ros-base --yes
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential --yes
 sudo rosdep init
@@ -22,6 +28,7 @@ source ~/.bashrc
 cd ~/catkin_ws && catkin_make -j1
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
 source ~/.bashrc
+
 # USB Port Setting
 rosrun turtlebot3_bringup create_udev_rules
 
