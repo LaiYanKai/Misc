@@ -20,8 +20,8 @@ cd ~/catkin_ws/
 echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 cd ~/catkin_ws && catkin_make -j1
-source ~/.bashrc
 echo 'source ~/catkin_ws/devel/setup.bash' >> ~/.bashrc
+source ~/.bashrc
 # USB Port Setting
 rosrun turtlebot3_bringup create_udev_rules
 
@@ -39,3 +39,4 @@ tar -xvf opencr_update.tar.bz2
 
 cd ./opencr_update
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+cd ~
