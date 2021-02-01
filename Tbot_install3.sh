@@ -27,8 +27,8 @@ rosrun turtlebot3_bringup create_udev_rules
 
 # OpenCR
 sudo dpkg --add-architecture armhf
-sudo apt-get update
-sudo apt-get install libc6:armhf --yes
+sudo apt update
+sudo apt install libc6:armhf --yes
 
 export OPENCR_PORT=/dev/ttyACM0
 export OPENCR_MODEL=burger
