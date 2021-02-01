@@ -12,3 +12,4 @@ sudo cp ~/Downloads/rpi3_wifi_firmware/lib/firmware/brcm/brcmfmac43455-sdio.bin 
 sudo cp ~/Downloads/rpi3_wifi_firmware/lib/firmware/brcm/brcmfmac43455-sdio.clm_blob .
 sudo rmmod brcmfmac
 sudo modprobe -vvv brcmfmac
+cd ~
