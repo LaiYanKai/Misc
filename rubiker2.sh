@@ -14,3 +14,5 @@ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator 
 sudo apt install python3-rosdep --yes
 sudo rosdep init
 rosdep update
+
+# roslaunch
