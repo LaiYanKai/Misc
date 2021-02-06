@@ -1,4 +1,5 @@
 # wget raw.githubusercontent.com/LaiYanKai/EE4308/main/rubiker.sh
+# source rubiker.sh
 sudo sh -c "echo 'APT::Periodic::Update-Package-Lists "0";' > /etc/apt/apt.conf.d/20auto-upgrades"
 sudo sh -c "echo 'APT::Periodic::Unattended-Upgrade "0";' >> /etc/apt/apt.conf.d/20auto-upgrades"
 
