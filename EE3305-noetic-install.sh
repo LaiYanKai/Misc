@@ -12,3 +12,4 @@ echo "export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/descript
 source ~/.bashrc
 
 sudo apt install python3-catkin-tools
+cd ~
