@@ -9,7 +9,7 @@ catkin_make
 
 # husky dependencies and turtle install
 sudo apt update
-sudo apt install ros-noetic-lms1xx ros-noetic-robot-localization ros-noetic-interactive-marker-twist-server ros-noetic-twist-mux ros-noetic-joy ros-noetic-teleop-twist-joy ros-noetic-turtlebot3 ros-noetic-turtlebot3-gazebo --yes
+sudo apt install ros-noetic-velodyne-description ros-noetic-lms1xx ros-noetic-robot-localization ros-noetic-interactive-marker-twist-server ros-noetic-twist-mux ros-noetic-joy ros-noetic-teleop-twist-joy ros-noetic-turtlebot3 ros-noetic-turtlebot3-gazebo --yes
 echo "source ~/husky/devel/setup.bash" >> ~/.bashrc
 echo "export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
