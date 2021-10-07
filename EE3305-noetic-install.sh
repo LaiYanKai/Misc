@@ -1,6 +1,7 @@
-# install husky, turtle and catkin build noetic devel 210827
+# install husky, turtle and catkin build noetic devel 211007
 
 # install husky noetic-devel branch
+rm -rf ~/husky
 mkdir -p ~/husky/src
 cd ~/husky/src
 git clone https://github.com/husky/husky -b noetic-devel
