@@ -4,6 +4,7 @@
 rm -rf ~/husky
 mkdir -p ~/husky/src
 cd ~/husky/src
+sudo apt install git --yes
 git clone https://github.com/husky/husky -b noetic-devel # use melodic-devel if noetic gives issues
 cd ~/husky
 catkin_make
