@@ -8,3 +8,5 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
 # does not install hector. Use luminus' lighter version. Otherwise, fuller version available at: https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor
+sudo rosdep init
+rosdep update
