@@ -11,21 +11,9 @@ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential --yes # build dependencies
 # husky and turtlebot dependencies
-sudo apt install ros-noetic-velodyne-description ros-noetic-lms1xx ros-noetic-robot-localization ros-noetic-interactive-marker-twist-server ros-noetic-twist-mux ros-noetic-joy ros-noetic-teleop-twist-joy ros-noetic-turtlebot3-* --yes 
+sudo apt install ros-noetic-husky-gazebo ros-noetic-turtlebot3-* --yes 
 
-# install husky noetic-devel branch
-rm -rf ~/husky
-mkdir -p ~/husky/src
-cd ~/husky/src
-sudo apt install git --yes
-git clone https://github.com/husky/husky -b noetic-devel # use melodic-devel if noetic gives issues
-cd ~/husky
-source ~/.bashrc
-catkin_make
-cd ~
-
-# husky dependencies and turtle install
-echo "source ~/husky/devel/setup.bash" >> ~/.bashrc
+# write to .bashrc so no need to keep typing this
 echo "export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
