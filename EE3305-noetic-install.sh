@@ -1,4 +1,6 @@
-# install husky, turtle and catkin build noetic devel 211007
+# install husky, turtle and catkin build noetic devel 220810
+# if there are problems with catkin_make, run script with "source EE3305-noetic-install.sh" instead of ./EE3305-noetic-install.sh
+
 # install ros
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt install curl --yes
@@ -18,11 +20,12 @@ cd ~/husky/src
 sudo apt install git --yes
 git clone https://github.com/husky/husky -b noetic-devel # use melodic-devel if noetic gives issues
 cd ~/husky
+source ~/.bashrc
 catkin_make
+cd ~
 
 # husky dependencies and turtle install
 echo "source ~/husky/devel/setup.bash" >> ~/.bashrc
 echo "export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
-
