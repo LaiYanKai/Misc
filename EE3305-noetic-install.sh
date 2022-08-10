@@ -14,6 +14,5 @@ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator 
 sudo apt install ros-noetic-husky-gazebo ros-noetic-turtlebot3-* --yes 
 
 # write to .bashrc so no need to keep typing this
-echo "export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro" >> ~/.bashrc
 echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
 source ~/.bashrc
