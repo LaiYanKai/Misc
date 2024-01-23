@@ -16,8 +16,10 @@ sudo apt install ros-humble-desktop-full -y
 sudo apt install ros-humble-gazebo-* ros-humble-cartographer ros-humble-cartographer-ros ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-dynamixel-sdk ros-humble-turtlebot3-* -y
 
 # write to .bashrc
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-echo "export ROS_DOMAIN_ID=30 #TURTLEBOT3" >> ~/.bashrc
-echo "source /usr/share/gazebo/setup.sh #Required for some machines to launch gz properly" >> ~/.bashrc
-source ~/.bashrc
+USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+USER_BASHRC=$USER_HOME/.bashrc
+echo "source /opt/ros/humble/setup.bash" >> $USER_BASHRC
+echo "export TURTLEBOT3_MODEL=burger" >> $USER_BASHRC
+echo "export ROS_DOMAIN_ID=30 #TURTLEBOT3" >> $USER_BASHRC
+echo "source /usr/share/gazebo/setup.sh #Required for some machines to launch gz properly" >> $USER_BASHRC
+# source ~/.bashrc
