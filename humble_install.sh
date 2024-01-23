@@ -23,3 +23,4 @@ echo "export TURTLEBOT3_MODEL=burger" >> $USER_BASHRC
 echo "export ROS_DOMAIN_ID=30 #TURTLEBOT3" >> $USER_BASHRC
 echo "source /usr/share/gazebo/setup.sh #Required for some machines to launch gz properly" >> $USER_BASHRC
 # source ~/.bashrc
+sudo shutdown now
