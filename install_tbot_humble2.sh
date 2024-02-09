@@ -31,7 +31,7 @@ sudo udevadm trigger
 
 echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
-# echo 'export LDS_MODEL=LDS-02' >> ~/.bashrc
+echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
 
 source ~/.bashrc
 
