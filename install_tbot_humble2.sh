@@ -1,4 +1,3 @@
-sudo apt update
 sudo apt install python3-argcomplete python3-colcon-common-extensions libboost-system-dev build-essential ros-humble-hls-lfcd-lds-driver ros-humble-turtlebot3-msgs ros-humble-dynamixel-sdk libudev-dev --yes
 
 mkdir -p ~/turtlebot3_ws/src && cd ~/turtlebot3_ws/src
