@@ -30,4 +30,6 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 # get next script
 wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.sh
 
+chmod +x *.sh
+
 reboot
