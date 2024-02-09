@@ -2,7 +2,6 @@
 # set to lab password.
 
 # make sure to connect to a wifi via netplan first.
-# script will reboot after completion.
 
 # netplan
 # sudo sh -c "echo 'network:' > /etc/netplan/50-cloud-init.yaml"
@@ -27,9 +26,21 @@ sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
 systemctl mask systemd-networkd-wait-online.service
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
+
 # get next script
 wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.sh
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble3.sh
 
 chmod +x *.sh
 
-reboot
+# Create swapfile
+sudo swapoff /swapfile
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+# sudo nano /etc/fstab
+echo 'Append "/swapfile swap swap defaults 0 0" into /etc/fstab using: sudo nano /etc/fstab'
+echo 'Then, reboot with "reboot"'
+
+# reboot
