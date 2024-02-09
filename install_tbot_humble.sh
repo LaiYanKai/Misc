@@ -29,7 +29,6 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 # get next script
 wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.sh
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble3.sh
 
 chmod +x *.sh
 
@@ -40,7 +39,7 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 # sudo nano /etc/fstab
-echo 'Append "/swapfile swap swap defaults 0 0" into /etc/fstab using: sudo nano /etc/fstab'
+echo 'Append "/swapfile swap swap defaults 0 0" into /etc/fstab using: "sudo nano /etc/fstab"'
 echo 'Then, reboot with "reboot"'
 
 # reboot
