@@ -11,11 +11,11 @@ cd ~/turtlebot3_ws/src
 git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 git clone -b ros2-devel https://github.com/ROBOTIS-GIT/ld08_driver.git
 cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch/
-curl -O https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot_ee4308.launch.py
+wget -O robot_ee4308.launch.py https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot_ee4308.launch.py
 cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/param/
-curl -O https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble3.sh
+wget -O burger_ee4308.yaml https://raw.githubusercontent.com/LaiYanKai/Misc/main/burger_ee4308.yaml
 cd ~
-curl -O https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot.sh
+wget -O robot.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot.sh
 chmod +x *.sh
 rm -rf ./opencr_update.tar.bz2
 wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
