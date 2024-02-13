@@ -36,6 +36,7 @@ echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
 source ~/.bashrc
 
 # OPENCR
+cd ~
 sudo dpkg --add-architecture armhf
 sudo apt update
 sudo apt install libc6:armhf --yes
