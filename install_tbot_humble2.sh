@@ -38,7 +38,7 @@ source ~/.bashrc
 # OPENCR
 sudo dpkg --add-architecture armhf
 sudo apt update
-sudo apt install libc6:armhf
+sudo apt install libc6:armhf --yes
 export OPENCR_PORT=/dev/ttyACM0
 export OPENCR_MODEL=burger
 rm -rf ./opencr_update.tar.bz2
