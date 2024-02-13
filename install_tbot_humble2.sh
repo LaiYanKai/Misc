@@ -16,6 +16,7 @@ cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/param/
 curl -O https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble3.sh
 cd ~
 curl -O https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot.sh
+chmod +x *.sh
 rm -rf ./opencr_update.tar.bz2
 wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
 
