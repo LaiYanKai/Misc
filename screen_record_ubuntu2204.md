@@ -29,7 +29,7 @@ To record screen in ubuntu 22.04, u need to disable wayland:
 7. You can find the video typically in the `~/Videos` folder.
 8. Open the folder in *Files*, and rename the video you want to `in.mp4`.
 9. In a terminal, cd to the `~/Videos` folder.
-10. Run the following command to convert the re-encode the video into something windows can open:
+10. Run the following command to re-encode the video into something windows can open:
     ```bash
     ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
     ```
