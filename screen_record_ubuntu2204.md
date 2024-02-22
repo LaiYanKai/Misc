@@ -22,7 +22,7 @@ To record screen in ubuntu 22.04, u need to disable wayland:
 1. Open Kazam by searching for it from the Activities pane on the top left of the screen
 2. To record screen, click on Screencast, and click Fullscreen
 3. Click capture, and after 5 seconds (the default countdown), the screen will start recording.
-4. 4 To finish the recording, click on the camera icon on the top right of the screen, and click "Finish recording"
+4. To finish the recording, click on the camera icon on the top right of the screen, and click "Finish recording"
 6. Save the file, preferably as `in.mp4`. Do not cancel, otherwise, the video will be lost.
 
 ## Converting to Windows friendly format
@@ -33,4 +33,4 @@ To record screen in ubuntu 22.04, u need to disable wayland:
     ```bash
     ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
     ```
-11. The output video is called `out.mp4`. You can now put out.mp4 into a Powerpoint presentation.
+11. The output video is called `out.mp4`. You can now put `out.mp4` into a Powerpoint presentation.
