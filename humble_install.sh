@@ -1,6 +1,6 @@
 set -euxo pipefail
 
-# update and upgrade, terminator installation
+# update and upgrade
 sudo apt update && sudo apt upgrade -y
 
 # ros installation
@@ -11,7 +11,7 @@ sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade -y
-sudo apt install ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp -y
+sudo apt install terminator ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp -y
 
 # write to .bashrc
 # USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
