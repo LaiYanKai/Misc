@@ -21,6 +21,10 @@ set -euxo pipefail
 # auto upgrades
 sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
 
+# change ssh permissions in ubuntu 22.04
+sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config.d/50-cloud-init.conf
+sudo service sshd restart
+
 # will require authentication
 systemctl mask systemd-networkd-wait-online.service
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
