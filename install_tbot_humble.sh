@@ -31,14 +31,12 @@ wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.
 chmod +x *.sh
 
 # Create swapfile
-sudo swapoff /swapfile
+# sudo swapoff /swapfile
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 # sudo nano /etc/fstab
 sudo sh -c "echo '/swapfile swap swap defaults 0 0' >> /etc/fstab"
-# echo 'Append "/swapfile swap swap defaults 0 0" into /etc/fstab using: "sudo nano /etc/fstab"'
-# echo 'Then, reboot with "reboot"'
 
 reboot
