@@ -26,7 +26,7 @@ source ~/.bashrc
 
 # build
 cd ~/turtlebot3_ws
-colcon build --symlink-install --parallel-workers 1
+colcon build --symlink-install # --parallel-workers 1
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
 source ~/.bashrc
 
