@@ -20,8 +20,12 @@ rm -r turtlebot3_cartographer turtlebot3_navigation2
 cd ~/turtlebot3_ws/
 echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
 echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
-echo 'export ROS_DOMAIN_ID=$1 #TURTLEBOT3' >> ~/.bashrc
+printf "export ROS_DOMAIN_ID=%s" $1 >> ~/.bashrc
+echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
 source ~/.bashrc
+
+# build
+cd ~/turtlebot3_ws
 colcon build --symlink-install --parallel-workers 1
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
 source ~/.bashrc
