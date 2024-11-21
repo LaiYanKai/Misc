@@ -21,6 +21,9 @@ set -euxo pipefail
 # auto upgrades
 sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
 
+# auto restart services during apt upgrade
+sudo sed -i 's/#$nrconf{restart} = '"'"'i'"'"';/$nrconf{restart} = '"'"'a'"'"';/g' /etc/needrestart/needrestart.conf
+
 # change ssh permissions in ubuntu 22.04
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config.d/50-cloud-init.conf
 sudo service sshd restart
