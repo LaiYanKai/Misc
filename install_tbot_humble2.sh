@@ -20,7 +20,7 @@ rm -r turtlebot3_cartographer turtlebot3_navigation2
 cd ~/turtlebot3_ws/
 echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
 echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
-printf "export ROS_DOMAIN_ID=%s" $1 >> ~/.bashrc
+printf "export ROS_DOMAIN_ID=%s\n" $1 >> ~/.bashrc
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
 echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp #for Nav2' >> ~/.bashrc
 source ~/.bashrc
@@ -49,3 +49,4 @@ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/l
 tar -xvf ./opencr_update.tar.bz2
 cd ~/opencr_update
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+cd ~
