@@ -3,6 +3,10 @@ set -euxo pipefail
 # update and upgrade
 sudo apt update && sudo apt upgrade -y
 
+# prevent suspending and network switching problems in vbox and in NUS.
+systemctl mask systemd-networkd-wait-online.service
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
 # ros installation
 # locale # feedback only.
 sudo apt install software-properties-common terminator -y
