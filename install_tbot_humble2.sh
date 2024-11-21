@@ -3,9 +3,6 @@ set -euxo pipefail
 # Accepts one argument, which is the ROS_DOMAIN_ID. Correspond to robot number.
 echo "ROS_DOMAIN_ID is $1"
 
-export DEBIAN_FRONTEND=noninteractive
-export NEEDRESTART_MODE=a
-
 # Install ROS
 sudo apt install software-properties-common -y
 sudo add-apt-repository universe
