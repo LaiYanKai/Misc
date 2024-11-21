@@ -23,6 +23,7 @@ sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
 
 # auto restart services during apt upgrade
 echo "\$nrconf{restart} = 'a'" | sudo tee /etc/needrestart/conf.d/autorestart.conf
+echo "\$nrconf{kernelhints} = -1" | sudo tee -a /etc/needrestart/conf.d/autorestart.conf
 
 # change ssh permissions in ubuntu 22.04
 sudo sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes" /etc/ssh/sshd_config.d/50-cloud-init.conf # can use sudo tee
