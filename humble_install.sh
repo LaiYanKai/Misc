@@ -11,7 +11,9 @@ sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade -y
-sudo apt install terminator ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp -y
+sudo apt install terminator ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp gcc-12 -y
+
+# for VBox 7 Guest Additions kernel build: gcc-12
 
 # write to .bashrc
 # USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
@@ -21,6 +23,6 @@ echo "export TURTLEBOT3_MODEL=burger" >> $USER_BASHRC
 echo "export ROS_DOMAIN_ID=30 #TURTLEBOT3" >> $USER_BASHRC
 echo "source /usr/share/gazebo/setup.sh #Required for some machines to launch gz properly" >> $USER_BASHRC
 echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
-echo "chmod 0700 /run/user/1000/" >> ~/.bashrc # for WSL2 users
+echo "#chmod 0700 /run/user/1000/" >> ~/.bashrc # for WSL2 users
 
 source ~/.bashrc
