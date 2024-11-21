@@ -11,7 +11,7 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade -y
 
-sudo apt install ros-humble-ros-base ros-dev-tools python3-argcomplete python3-colcon-common-extensions libboost-system-dev build-essential ros-humble-hls-lfcd-lds-driver ros-humble-turtlebot3-msgs ros-humble-dynamixel-sdk libudev-dev -y
+sudo apt install ros-humble-ros-base ros-dev-tools python3-argcomplete python3-colcon-common-extensions libboost-system-dev build-essential ros-humble-hls-lfcd-lds-driver ros-humble-turtlebot3-msgs ros-humble-dynamixel-sdk libudev-dev ros-humble-rmw-cyclonedds-cpp -y
 mkdir -p ~/turtlebot3_ws/src && cd ~/turtlebot3_ws/src
 git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 git clone -b ros2-devel https://github.com/ROBOTIS-GIT/ld08_driver.git
@@ -22,6 +22,7 @@ echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
 echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
 printf "export ROS_DOMAIN_ID=%s" $1 >> ~/.bashrc
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
+echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp #for Nav2' >> ~/.bashrc
 source ~/.bashrc
 
 # build
