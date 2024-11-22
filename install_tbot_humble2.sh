@@ -1,4 +1,4 @@
-set -euxo pipefail
+set -exo pipefail
 
 # Accepts one argument, which is the ROS_DOMAIN_ID. Correspond to robot number.
 echo "ROS_DOMAIN_ID is $1"
@@ -23,13 +23,12 @@ echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
 printf "export ROS_DOMAIN_ID=%s\n" $1 >> ~/.bashrc
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
 echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp #for Nav2' >> ~/.bashrc
-source ~/.bashrc
+source /opt/ros/humble/setup.bash
 
 # build
 cd ~/turtlebot3_ws
 colcon build --symlink-install # --parallel-workers 1
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
-source ~/.bashrc
 
 # Some communication protocol for LIDAR
 sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
@@ -49,4 +48,3 @@ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/l
 tar -xvf ./opencr_update.tar.bz2
 cd ~/opencr_update
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
-cd ~
