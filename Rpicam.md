@@ -1,3 +1,26 @@
+## Raspberry Pi camera v1.3, Ubuntu 22.04.5 Server on Raspberry Pi 3B+, ROS2 Humble.
+Working as of 12 December 2024.
+
+- No changes to `/boot/firmware/config.txt` on RPi
+- Install camera_ros: [camera_ros github](https://github.com/christianrauch/camera_ros) on Rpi
+  ```bash
+  sudo apt install ros-humble-camera-ros on Rpi.
+  ```
+- On Remote PC, install image_tools. RViz2 is unreliable and has a problem displaying camera images even if a static transform between `map` and `camera` exists. Not sure why there is no support for a simple static camera feed.
+  ```bash
+  sudo apt install image_tools
+  ```
+- Attach camera to Rpi before booting. Once booted, choose an appropriate `ROS_DOMAIN_ID` and stream the camera feed from the Rpi (maybe via SSH). (see available width, height and format settings in terminal output):
+  ```bash
+  ROS_DOMAIN_ID=8 ros2 run camera_ros camera_node --ros-args -p width:=160 -p height:=120 -p format:=BGR888
+  ```
+- On Remote PC, stream the picture using `image_tools`:
+  ```bash
+  ROS_DOMAIN_ID=8 ros2 run image_tools showimage --ros-args --remap image:=/camera/image_raw
+  ```
+
+
+## Deprecated (Same hardware, but Ubuntu 20.04 Server, ROS1 Noetic)
 fresh installation ubuntu 20.04 Server Rpi 3B v1.2
 
 include start_x=1 and gpu_mem=128 inside my /boot/firmware/config.txt
