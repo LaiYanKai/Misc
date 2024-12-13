@@ -4,7 +4,7 @@ Working as of 12 December 2024.
 - No changes to `/boot/firmware/config.txt` on RPi
 - Install camera_ros: [camera_ros github](https://github.com/christianrauch/camera_ros) on Rpi
   ```bash
-  sudo apt install ros-humble-camera-ros on Rpi.
+  sudo apt install ros-humble-camera-ros
   ```
 - On Remote PC, install image_tools. RViz2 is unreliable and has a problem displaying camera images even if a static transform between `map` and `camera` exists. Not sure why there is no support for a simple static camera feed.
   ```bash
