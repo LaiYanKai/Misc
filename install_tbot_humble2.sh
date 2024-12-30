@@ -1,7 +1,7 @@
 set -exo pipefail
 
 # Accepts one argument, which is the ROS_DOMAIN_ID. Correspond to robot number.
-echo "ROS_DOMAIN_ID is $1"
+# echo "ROS_DOMAIN_ID is $1"
 
 # Install ROS
 sudo apt install software-properties-common -y
@@ -20,7 +20,7 @@ rm -r turtlebot3_cartographer turtlebot3_navigation2
 cd ~/turtlebot3_ws/
 echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
 echo 'export LDS_MODEL=LDS-01' >> ~/.bashrc
-printf "export ROS_DOMAIN_ID=%s\n" $1 >> ~/.bashrc
+printf "export ROS_DOMAIN_ID=%s\n" 30 >> ~/.bashrc
 echo 'export TURTLEBOT3_MODEL=burger' >> ~/.bashrc
 echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp #for Nav2' >> ~/.bashrc
 source /opt/ros/humble/setup.bash
