@@ -4,6 +4,9 @@ set -euxo pipefail
 systemctl mask systemd-networkd-wait-online.service
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
+# prevent auto updates
+sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
+
 # update and upgrade
 sudo apt update && sudo apt upgrade -y
 
