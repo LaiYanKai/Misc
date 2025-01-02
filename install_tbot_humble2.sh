@@ -27,7 +27,7 @@ source /opt/ros/humble/setup.bash
 
 # build
 cd ~/turtlebot3_ws
-colcon build --symlink-install # --parallel-workers 1
+colcon build --symlink-install --parallel-workers 2
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
 
 # Some communication protocol for LIDAR
