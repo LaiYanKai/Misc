@@ -26,6 +26,8 @@ echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp #for Nav2' >> ~/.bashrc
 source /opt/ros/humble/setup.bash
 
 # build
+cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot_c1.launch.py
 cd ~/turtlebot3_ws
 colcon build --symlink-install --parallel-workers 2
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
