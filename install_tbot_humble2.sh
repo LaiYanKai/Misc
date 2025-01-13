@@ -40,11 +40,14 @@ cd ~/turtlebot3_ws
 colcon build --symlink-install --parallel-workers 2
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
 
-# Some communication protocol for LIDAR
+# Some communication protocol for old LIDAR
 source ~/turtlebot3_ws/install/setup.bash
 sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
+
+# udev for C1 LIDAR
+source ~/rplidar/src/rplidar_ros/scripts/create_udev_rules.sh
 
 # For OpenCR
 sudo dpkg --add-architecture armhf
