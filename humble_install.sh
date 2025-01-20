@@ -31,6 +31,7 @@ echo "export ROS_DOMAIN_ID=30 #TURTLEBOT3" >> $USER_BASHRC
 echo "source /usr/share/gazebo/setup.sh #Required for some machines to launch gz properly" >> $USER_BASHRC
 echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
 echo "#chmod 0700 /run/user/1000/" >> ~/.bashrc # for WSL2 users
+echo "export RCUTILS_COLORIZED_OUTPUT=1" >> ~/.bashrc
 
 # adjust navigation2 to differential
 sudo sed -i 's/robot_model_type: "differential"/robot_model_type: "nav2_amcl::DifferentialMotionModel"/g' /opt/ros/humble/share/turtlebot3_navigation2/param/burger.yaml
