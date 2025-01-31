@@ -1,10 +1,10 @@
 set -euxo pipefail
 
-# prevent suspending and network switching problems in vbox and in NUS.
+# [OPTIONAL] prevent suspending and network switching problems in vbox and in NUS.
 systemctl mask systemd-networkd-wait-online.service
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-# prevent auto updates
+# [OPTIONAL] prevent auto updates
 sudo sed -i 's/"1"/"0"/g' /etc/apt/apt.conf.d/20auto-upgrades
 
 # update and upgrade
@@ -18,12 +18,9 @@ sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade -y
-sudo apt install terminator ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp gcc-12 -y
-
-# for VBox 7 Guest Additions kernel build: gcc-12
+sudo apt install terminator ros-humble-desktop-full ros-humble-turtlebot3-* git ros-dev-tools ros-humble-rmw-cyclonedds-cpp -y
 
 # write to .bashrc
-# USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 USER_BASHRC=$HOME/.bashrc
 echo "source /opt/ros/humble/setup.bash" >> $USER_BASHRC
 echo "export TURTLEBOT3_MODEL=burger" >> $USER_BASHRC
