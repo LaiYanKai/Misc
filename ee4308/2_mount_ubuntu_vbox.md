@@ -71,4 +71,4 @@ About 7GB of Wi-Fi is required for this section.
     
     ![image](https://github.com/user-attachments/assets/3c7bd7c5-ac63-4a67-b0e0-10b5575e2a1e)
 
-18. Proceed to the next [section](https://github.com/LaiYanKai/Misc/blob/main/ee4308/3_install_ubuntu_vbox.md).
+18. Proceed to the next [section](https://github.com/LaiYanKai/Misc/blob/main/ee4308/3_install_ubuntu.md).
