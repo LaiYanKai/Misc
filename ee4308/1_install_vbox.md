@@ -12,4 +12,4 @@ If you have Ubuntu 22.04 LTS on your system as a virtual machine or boot, ignore
 
    ![image](https://github.com/user-attachments/assets/f6c6c1b6-8eee-49d2-b215-4a3346179aab)
 
-7. Proceed to the next section.
+7. Proceed to the next [section](https://github.com/LaiYanKai/Misc/blob/main/ee4308/2_mount_ubuntu_vbox.md).
