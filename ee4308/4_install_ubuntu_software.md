@@ -17,13 +17,6 @@
    
     ![image](https://github.com/user-attachments/assets/9e158a9e-4661-49ef-9b29-e8bbb620dccc)
 
-5. Load up Gazebo on a map that will be used by the course. Gazebo will take a few minutes (up to 10 minutes) to load a map for the first time, during which a black screen will be shown in Gazebo. If a pop-up dialog indicates that Gazebo is not responding, click `Wait`. 
-
-    ![image](https://github.com/user-attachments/assets/15d756c2-74ca-4e32-b5e6-af7891c364f4)
-
-   After loading is complete, the environment can be seen in Gazebo. `Ctrl+C` at the terminal to close Gazebo.
-
-    ![image](https://github.com/user-attachments/assets/47e6e261-d387-4141-8288-d8a13ecdbf0c)
 
    
 ## 4.2&emsp;Install Terminator
@@ -50,6 +43,7 @@
     - `Ctrl+Shift+V` pastes text.
 
 ## 4.3&emsp;Upgrade and Install ROS2 
+This installation is meant for **freshly installed** Ubuntu. There are configurations labeled as `[OPTIONAL]` in `humble_install.sh` that you may need to investigate if using an existing Ubuntu installation.
 
 1. In a terminal, download the installation script and assign permissions. The script is used for installing the lab computers.
 
@@ -72,6 +66,15 @@
 4. Wait between a few minutes to half an hour.  If the installation does not stop at `+sudo set -i...` there may be errors. Ensure that there is internet connection and retry the script from step 2. 
 
    ![image](https://github.com/user-attachments/assets/00432839-2c5b-479e-9ef5-fec40da94f14)
+
+   
+5. Once the installation is complete, load up Gazebo on a map that will be used by the course. Gazebo will take a few minutes (up to 10 minutes) to load a map for the first time, during which a black screen will be shown in Gazebo. If a pop-up dialog indicates that Gazebo is not responding, click `Wait`. 
+
+    ![image](https://github.com/user-attachments/assets/15d756c2-74ca-4e32-b5e6-af7891c364f4)
+
+   After loading is complete, the environment can be seen in Gazebo. `Ctrl+C` at the terminal to close Gazebo.
+
+    ![image](https://github.com/user-attachments/assets/47e6e261-d387-4141-8288-d8a13ecdbf0c)
 
 
 ## 4.4&emsp; Install VirtualBox Guest Additions
