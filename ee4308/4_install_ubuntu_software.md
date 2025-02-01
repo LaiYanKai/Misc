@@ -17,6 +17,15 @@
    
     ![image](https://github.com/user-attachments/assets/9e158a9e-4661-49ef-9b29-e8bbb620dccc)
 
+5. Load up Gazebo on a map that will be used by the course. Gazebo will take a few minutes (up to 10 minutes) to load a map for the first time, during which a black screen will be shown in Gazebo. If a pop-up dialog indicates that Gazebo is not responding, click `Wait`. 
+
+    ![image](https://github.com/user-attachments/assets/15d756c2-74ca-4e32-b5e6-af7891c364f4)
+
+   After loading is complete, the environment can be seen in Gazebo. `Ctrl+C` at the terminal to close Gazebo.
+
+    ![image](https://github.com/user-attachments/assets/47e6e261-d387-4141-8288-d8a13ecdbf0c)
+
+   
 ## 4.2&emsp;Install Terminator
 
 1. Open a new terminal with `Ctrl+Alt+T`, and run:
