@@ -53,6 +53,7 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([lidar_pkg_dir, '/rplidar_c1_launch.py']),
+            launch_arguments={'frame_id': 'base_scan'}.items(),
         ),
 
         Node(
