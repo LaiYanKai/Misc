@@ -1,9 +1,12 @@
+set -exo pipefail
+
 # build rplidar
 mkdir -p ~/rplidar/src
 cd ~/rplidar/src
 git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ~/rplidar
 colcon build --symlink-install --parallel-workers 2
+echo 'source ~/rplidar/install/setup.bash' >> ~/.bashrc
 source ~/rplidar/install/setup.bash
 
 # rplidar udev rules
