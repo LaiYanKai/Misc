@@ -1,7 +1,13 @@
 1&emsp;Where to Install Ubuntu 24.04
----
+==============
+Dual boot, single boot, or use VirtualBox? Dual boot is recommended, but it may depend on the hardware.
 
-The following sections list the options for installing Ubuntu 24.04, in decreasing order of preference.
+# Table of Contents
+[1.1&emsp;Dual Boot](#11dual-boot)
+
+[1.2&emsp;Single Boot](#12single-boot)
+
+[1.2&emsp;Oracle VirtualBox](#13oracle-virtualbox)
 
 # 1.1&emsp;Dual Boot
 | | |

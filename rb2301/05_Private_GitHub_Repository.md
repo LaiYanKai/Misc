@@ -1,7 +1,22 @@
 5&emsp;Private GitHub Repository
----
+==============
+Set up a private GitHub Repository and modify it with VSCode.
 
-Here we create a GitHub repository that will be used by this course.
+# Table of Contents
+
+[5.1&emsp;Create Account and Repository](#51create-account-and-repository)
+
+[5.2&emsp;Create Personal Access Token](#52create-personal-access-token)
+
+[5.3&emsp;Configure Git on Ubuntu](#53configure-git-on-ubuntu)
+
+[5.4&emsp;Clone Repository](#54clone-repository)
+
+[5.5&emsp;Open Repository with VSCode](#55open-repository-with-vscode)
+
+[5.6&emsp;Pushing Commits with VSCode](#56pushing-commits-with-vscode)
+
+[5.7&emsp;Pulling Commits with VSCode](#57pulling-commits-with-vscode)
 
 # 5.1&emsp;Create Account and Repository
 
@@ -117,7 +132,7 @@ Here we create a GitHub repository that will be used by this course.
 
 3. Proceed to the next section.
 
-# 5.5&emsp;Open Repository 
+# 5.5&emsp;Open Repository with VSCode
 | | |
 | -- | -- |
 | Summary | Open the newly cloned `rb2301` private repository with VSCode on Ubuntu, and set up VSCode for this new repository. |
@@ -137,7 +152,7 @@ Here we create a GitHub repository that will be used by this course.
 
 4. Proceed to the next section.
 
-# 5.6&emsp;Pushing Commits
+# 5.6&emsp;Pushing Commits with VSCode
 | | |
 | -- | -- |
 | Summary | "Saving" the repository to GitHub using VSCode. As an example, create the `.gitignore` file and modifying `README.md` file. Then, stage the changes in a commit and push the commit to GitHub. Steps to simplify the process on VSCode are shown. |
@@ -204,7 +219,7 @@ Here we create a GitHub repository that will be used by this course.
 
     9. The next section is for your information only.
 
-# 5.7&emsp;Pulling Commits
+# 5.7&emsp;Pulling Commits with VSCode
 
 When the repository is **updated somewhere else** (e.g. another computer, via GitHub website, or another contributor), the local copy on the current machine needs to be synchronized. Simply go to the `Source Control` tab, and click `Sync Changes` (down arrow shown). Make sure that VSCode periodically fetches from GitHub to avoid problems.
 

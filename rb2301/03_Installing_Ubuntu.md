@@ -1,5 +1,15 @@
 3&emsp;Installing Ubuntu 24.04
----
+==============
+Install Ubuntu 24.04.
+
+# Table of Contents
+
+[3.1&emsp;Installation Steps](#31installation-steps)
+
+[3.2&emsp;Initial Boot](#32initial-boot)
+
+[3.3&emsp;VirtualBox Guest Additions](#33virtualbox-guest-additions)
+
 
 # 3.1&emsp;Installation Steps
 
@@ -84,7 +94,7 @@
 
 18. Proceed to the next section.
 
-# 3.2&emsp;First-time Boot
+# 3.2&emsp;Initial Boot
 
 | | |
 | -- | -- |
@@ -122,7 +132,7 @@
 
 24. For dual boot and single boot users, proceed to to install software starting from [4.1 Terminator](04_Installing_Ubuntu_Software.md#41terminator). For VirtualBox users, proceed to the next section to install Guest Additions.
 
-# 3.3&emsp;Oracle VirtualBox Guest Additions: 
+# 3.3&emsp;VirtualBox Guest Additions
 | | |
 | -- | -- |
 | Summary | Guest Additions allow users to cut-and-paste text from the host operating system to Ubuntu, and other useful interactions between the host and virtual operating systems. | 
