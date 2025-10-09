@@ -163,7 +163,7 @@ Prepare for the installation of Ubuntu 24.04.
 
     ![](img/rb040.png)
 
-    1. You can Turn off the virtual machine window by clicking the cross on the top-right of the window. Select `Power off the machine` and click `OK`.
+    1. You can turn off the virtual machine window by clicking the cross on the top-right of the window. Select `Power off the machine` and click `OK`.
       
     2. On Windows, search for `Core isolation` in the start menu, and disable `Memory integrity`.
 
@@ -172,10 +172,10 @@ Prepare for the installation of Ubuntu 24.04.
     3. On Windows, search for `Turn Windows features on or off`. In the window, **uncheck**
    
        - `Hyper-V`
-       - Virtual Machine Platform
-       - Windows Hypervisor Platform
-       - Windows Sandbox
-       - Windows Subsystem for Linux
+       - `Virtual Machine Platform`
+       - `Windows Hypervisor Platform`
+       - `Windows Sandbox`
+       - `Windows Subsystem for Linux`
 
        ![](img/rb042.png)
 
@@ -192,7 +192,8 @@ Prepare for the installation of Ubuntu 24.04.
 
        ![](img/rb044.png)
        
-    9. Click `OK` to exit the window, and start the Virtual Machine. The green turtle is hopefully gone.
+    9. Click `OK` to exit the window, and start the virtual machine running Ubuntu. The green turtle is hopefully gone.
    
 21. Proceed to [3.1 Installing Steps](03_Installing_Ubuntu.md#31installation-steps).
+
 
