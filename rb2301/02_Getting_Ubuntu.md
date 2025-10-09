@@ -159,4 +159,40 @@ Prepare for the installation of Ubuntu 24.04.
 
     ![](img/rb028.png)
 
-20. Proceed to [3.1 Installing Steps](03_Installing_Ubuntu.md#31installation-steps).
+20. Observe the bottom right-hand corner of the new virtual machine window. If there is a **green turtle**, instead of the rectangular `V` icon as shown, then you will need to do some extra steps:
+
+    ![](img/rb040.png)
+
+    1. You can Turn off the virtual machine window by clicking the cross on the top-right of the window. Select `Power off the machine` and click `OK`.
+      
+    2. On Windows, search for `Core isolation` in the start menu, and disable `Memory integrity`.
+
+       ![](img/rb041.png)
+
+    3. On Windows, search for `Turn Windows features on or off`. In the window, **uncheck**
+   
+       - `Hyper-V`
+       - Virtual Machine Platform
+       - Windows Hypervisor Platform
+       - Windows Sandbox
+       - Windows Subsystem for Linux
+
+       ![](img/rb042.png)
+
+    5. After unchecking the boxes, click `OK` and restart when prompted. The computer will now reboot and install some updates.
+   
+    6. Open VirtualBox, go to the virtual machine settings. On the settings window, go to `System` and then `Processor`. **Check**
+        
+        - `Enable PAE/NX`
+        - `Enable Nested VT-x/AMD-V`
+
+       ![](img/rb043.png)
+       
+    8. On the same settings window, Go to `System`, and then `Acceleration`. **Check** `Enable Nested Paging`.
+
+       ![](img/rb044.png)
+       
+    9. Click `OK` to exit the window, and start the Virtual Machine. The green turtle is hopefully gone.
+   
+21. Proceed to [3.1 Installing Steps](03_Installing_Ubuntu.md#31installation-steps).
+
