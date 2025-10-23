@@ -126,7 +126,7 @@ Install Software in Ubuntu 24.04.
     sudo apt upgrade -y
 
     sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz -y
-    # sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 -y
+    # sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 ros-jazzy-nav2-route -y
     ```
 
     <!-- 
@@ -165,4 +165,5 @@ Install Software in Ubuntu 24.04.
     4. You may now close all terminals.
 
 4. Proceed to setup a private GitHub repository in [5 Private GitHub Repository](05_Private_GitHub_Repository.md).
+
 
