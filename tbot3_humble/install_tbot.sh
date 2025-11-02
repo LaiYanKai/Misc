@@ -34,8 +34,7 @@ systemctl mask systemd-networkd-wait-online.service
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 # get next script
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.sh
-
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tbot3_humble/install_tbot2.sh
 chmod +x *.sh
 
 # Create swapfile

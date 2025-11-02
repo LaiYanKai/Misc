@@ -35,7 +35,7 @@ source ~/rplidar/install/setup.bash
 
 # build tbot
 cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot_c1.launch.py
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tbot3_humble/robot_c1.launch.py
 cd ~/turtlebot3_ws
 colcon build --symlink-install --parallel-workers 2
 echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
