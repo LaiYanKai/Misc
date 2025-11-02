@@ -1,5 +1,6 @@
+#!/bin/bash
 # assume Rpi 5, 4GB/8GB/16GB
-set -euxo pipefail
+set -exo pipefail
 
 # ==========================
 # # netplan
@@ -24,6 +25,9 @@ set -euxo pipefail
 # # will require authentication
 # systemctl mask systemd-networkd-wait-online.service
 # sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+# # for Desktop versions only
+# gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 # # get next script
 # wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/install_tbot_humble2.sh
@@ -54,24 +58,23 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update 
 sudo apt upgrade -y
 sudo apt install ros-jazzy-ros-base ros-dev-tools python3-argcomplete python3-colcon-common-extensions libboost-system-dev build-essential ros-jazzy-hls-lfcd-lds-driver ros-jazzy-turtlebot3-msgs ros-jazzy-dynamixel-sdk ros-jazzy-xacro libudev-dev openssh-server -y
-echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc
-source ~/.bashrc
+echo 'source /opt/ros/jazzy/setup.bash' >> $HOME/.bashrc
 
 # Clone Turtle
-mkdir -p ~/turtlebot3_ws/src
-cd ~/turtlebot3_ws/src
+mkdir -p $HOME/turtlebot3_ws/src
+cd $HOME/turtlebot3_ws/src
 git clone -b jazzy https://github.com/ROBOTIS-GIT/turtlebot3.git
 git clone -b jazzy https://github.com/ROBOTIS-GIT/ld08_driver.git
 git clone -b jazzy https://github.com/ROBOTIS-GIT/coin_d4_driver
-cd ~/turtlebot3_ws/src/turtlebot3
+cd $HOME/turtlebot3_ws/src/turtlebot3
 rm -r turtlebot3_cartographer turtlebot3_navigation2
 
 # Build Turtle
-cd ~/turtlebot3_ws/
+cd $HOME/turtlebot3_ws/
+source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install # --parallel-workers 2
-echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
-echo 'export LDS_MODEL=LDS-03' >> ~/.bashrc # If using LDS-03 (not C1)
-source ~/.bashrc
+echo 'source ~/turtlebot3_ws/install/setup.bash' >> $HOME/.bashrc
+echo 'export LDS_MODEL=LDS-03' >> $HOME/.bashrc # If using LDS-03 (not C1)
 
 # Turtle UDev (OpenCR)
 sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
@@ -79,27 +82,29 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Clone Rplidar
-mkdir -p ~/rplidar/src
-cd ~/rplidar/src
+mkdir -p $HOME/rplidar/src
+cd $HOME/rplidar/src
 git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 
 # Build Rplidar
-cd ~/rplidar
-colcon build --symlink-install --parallel-workers 2
-source ~/rplidar/install/setup.bash
+cd $HOME/rplidar
+# source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install # --parallel-workers 2
+source $HOME/rplidar/install/setup.bash
+echo 'source ~/rplidar/install/setup.bash' >> $HOME/.bashrc
 
 # Rplidar Udev
-source ~/rplidar/src/rplidar_ros/scripts/create_udev_rules.sh
+source $HOME/rplidar/src/rplidar_ros/scripts/create_udev_rules.sh
 
-# cd ~/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch
+# cd $HOME/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch
 # wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/robot_c1.launch.py
-# cd ~/turtlebot3_ws
+# cd $HOME/turtlebot3_ws
 # colcon build --symlink-install --parallel-workers 2
-# echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
+# echo 'source ~/turtlebot3_ws/install/setup.bash' >> $HOME/.bashrc
 
 # OpenCR Firmware
-mkdir -p ~/opencr_update
-cd ~/opencr_update
+mkdir -p $HOME/opencr_update
+cd $HOME/opencr_update
 sudo dpkg --add-architecture armhf  
 sudo apt-get update  
 sudo apt-get install libc6:armhf -y
@@ -110,9 +115,8 @@ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/l
 tar -xvf opencr_update.tar.bz2
 ./opencr_update  
 ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr  
-cd ~
-rm -rf ~/opencr_update
+cd $HOME
+rm -rf $HOME/opencr_update
 
 # ROS_DOMAIN_ID
-echo 'export ROS_DOMAIN_ID=1' >> ~/.bashrc
-source ~/.bashrc
+echo 'export ROS_DOMAIN_ID=1' >> $HOME/.bashrc
