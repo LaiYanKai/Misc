@@ -48,6 +48,7 @@ cd $HOME/turtlebot3_ws/
 colcon build --symlink-install # --parallel-workers 2
 
 # Rplidar Udev
+chmod +x $HOME/rplidar/src/rplidar_ros/scripts/create_udev_rules.sh
 source $HOME/rplidar/src/rplidar_ros/scripts/create_udev_rules.sh
 
 # Turtle UDev (OpenCR)
