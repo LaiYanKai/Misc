@@ -84,6 +84,5 @@ def generate_launch_description():
             executable='camera_node',
             parameters=[
                 {'width': 320, 'height': 320, 'format': 'BGR888'}],
-            arguments=['-i', usb_port],
             output='screen'),
     ])
