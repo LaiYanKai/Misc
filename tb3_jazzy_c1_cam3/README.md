@@ -67,3 +67,8 @@ chmod +x *.sh
 ```bash
 ./install_tbot2.sh
 ```
+
+4. Take note of any errors, let me know. If successful, shutdown:
+```bash
+sudo shutdown now
+```
