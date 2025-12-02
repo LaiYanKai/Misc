@@ -68,13 +68,13 @@ source $HOME/rplidar_ws/install/setup.bash # underlay the rplidar packages
 source $HOME/camera_ws/install/setup.bash # underlay the camera packages
 cd $HOME/turtlebot3_ws/
 colcon build --symlink-install # --parallel-workers 2
+source $HOME/turtlebot3_ws/install/setup.bash # for some scripts to work subsequently like rplidar create_udev_rules. At this point, this will source all packages.
 
 # Rplidar Udev
 chmod +x $HOME/rplidar_ws/src/rplidar_ros/scripts/create_udev_rules.sh
 source $HOME/rplidar_ws/src/rplidar_ros/scripts/create_udev_rules.sh
 
 # Turtle UDev (OpenCR)
-source $HOME/turtlebot3_ws/install/setup.bash
 sudo cp `ros2 pkg prefix turtlebot3_bringup`/share/turtlebot3_bringup/script/99-turtlebot3-cdc.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
