@@ -1,0 +1,40 @@
+sudo apt update
+
+# INSTALL TERMINATOR
+sudo apt install terminator -y
+
+# INSTALL CODE
+sudo snap install --classic code
+# Install VSCode extension: (1) Robotics Development Environment (by Ranch Robotics, select the one with "2" in the round icon)
+# Install VSCode extension: (2) Remote Development (by Microsoft, select the one with "4" in the round icon)
+
+# INSTALL ROS
+sudo apt install software-properties-common -y
+sudo add-apt-repository universe
+# press ENTER
+sudo apt update
+sudo apt install curl -y
+export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo $VERSION_CODENAME)_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
+sudo apt update 
+sudo apt upgrade -y
+sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz python3-pip -y
+sudo rosdep init
+rosdep update
+
+# ADD ROS TO BASHRC
+echo 'source /opt/ros/jazzy/setup.bash' >> $HOME/.bashrc
+echo 'export TURTLEBOT3_MODEL=burger' >> $HOME/.bashrc
+echo 'export ROS_DOMAIN_ID=1' >> $HOME/.bashrc
+source $HOME/.bashrc # this will not work if this script is run with "./". Just cut and paste everything here.
+
+# INSTALL ULTRALYTICS
+pip install ultralytics "numpy<2" --break-system-packages # !TODO: use Venv in the future
+
+# CLONE TB3_YOLO_PC
+cd $HOME
+git clone https://github.com/laiyankai/tb3_yolo_pc
+cd $HOME/tb3_yolo_pc
+source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install
