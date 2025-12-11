@@ -30,7 +30,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 # gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 # get next script
+cd $HOME
 wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot2.sh
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot3.sh
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/flash.sh
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/robot.sh
 
 chmod +x *.sh
 

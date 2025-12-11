@@ -19,7 +19,7 @@ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-a
 sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update 
 sudo apt upgrade -y
-sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz python3-pip -y
+sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz python3-pip ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 ros-jazzy-nav2-route  -y
 sudo rosdep init
 rosdep update
 
@@ -34,7 +34,9 @@ pip install ultralytics "numpy<2" --break-system-packages # !TODO: use Venv in t
 
 # CLONE TB3_YOLO_PC
 cd $HOME
-git clone https://github.com/laiyankai/tb3_yolo_pc
-cd $HOME/tb3_yolo_pc
+git clone https://github.com/laiyankai/tb3_yolo
+cd $HOME/tb3_yolo
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install
+
+nano $HOME/.bashrc
