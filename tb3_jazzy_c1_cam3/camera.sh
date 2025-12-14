@@ -1,0 +1,2 @@
+#!/bin/bash
+ros2 run camera_ros camera_node --ros-args -p width:=1536 -p height:=864 -p sensor_mode:="4608:2592" -p FrameDurationLimits:="[100000,100000]" -p format:="BGR888" #wide FOV for IMX708 (Rpi cam v3)
