@@ -4,14 +4,10 @@ set -exo pipefail
 
 mkdir -p $HOME/opencr_update
 cd $HOME/opencr_update
-export OPENCR_PORT=/dev/ttyACM0  
-export OPENCR_MODEL=burger
-
-# uncomment the following to update
-wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
+# comment the following if the $HOME/opencr_update/opencr_update folder already exists with the most recent firmware
+wget -O opencr_update.tar.bz2 https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
 rm -rf opencr_update
 tar -xvf opencr_update.tar.bz2
 
 cd $HOME/opencr_update/opencr_update  
-./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr  
-cd $HOME
+./update.sh /dev/ttyACM0 burger.opencr

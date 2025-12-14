@@ -28,7 +28,7 @@ git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 
 # Apply 15cm to 5cm min lidar range (quick hack. range may not be accurate when <0.1m)
 cd $HOME/rplidar_ws/src/rplidar_ros/src
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/rplidar_node.cpp
+wget -O rplidar_node.cpp https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/rplidar_node.cpp
 
 # Clone Turtle
 rm -rf $HOME/turtlebot3_ws
@@ -47,8 +47,11 @@ wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/rob
 # Camera libs
 mkdir -p $HOME/camera_ws/src
 cd $HOME/camera_ws/src
-git clone https://github.com/raspberrypi/libcamera.git # worked at 24 Nov 2025
-git clone https://github.com/christianrauch/camera_ros.git # worked at 24 Nov 2025
+git clone https://github.com/raspberrypi/libcamera.git 
+git clone https://github.com/christianrauch/camera_ros.git 
+cd $HOME/camera_ws/src/libcamera
+git reset --hard bfd68f786964636b09f8122e6c09c230367390e7 # reset to earlier commit for camera to work
+
 
 # Begin building from ROS (Underlay)
 source /opt/ros/jazzy/setup.bash
@@ -56,7 +59,7 @@ source /opt/ros/jazzy/setup.bash
 # Install and Build Camera Libs
 cd $HOME/camera_ws/
 rosdep install -y --from-paths src --ignore-src --rosdistro jazzy --skip-keys=libcamera
-colcon build # --event-handlers=console_direct+
+colcon build --symlink-install # --event-handlers=console_direct+
 
 # Build Rplidar
 cd $HOME/rplidar_ws/
