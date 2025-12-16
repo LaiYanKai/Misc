@@ -19,7 +19,7 @@ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-a
 sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update 
 sudo apt upgrade -y
-sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz python3-pip ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 ros-jazzy-nav2-route  -y
+sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz python3-pip ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 ros-jazzy-nav2-route iw -y
 sudo rosdep init
 rosdep update
 
@@ -29,10 +29,18 @@ echo 'export TURTLEBOT3_MODEL=burger' >> $HOME/.bashrc
 echo 'export ROS_DOMAIN_ID=1' >> $HOME/.bashrc
 source $HOME/.bashrc # this will not work if this script is run with "./". Just cut and paste everything here.
 
+# INSTALL SOFTWARE FOR 5GHZ HOTSPOT
+DIS_RDM_CONF=/etc/NetworkManager/conf.d/90-disable-randomization.conf
+sudo sh -c "echo '[device-mac-randomization]' > $DIS_RDM_CONF"
+sudo sh -c "echo 'wifi.scan-rand-mac-address=no' >> $DIS_RDM_CONF"
+# sudo apt install iw -y
+sudo iw reg set SG
+sudo sh -c "echo 'REGDOMAIN=SG' > /etc/default/crda"
+
 # INSTALL ULTRALYTICS
 pip install ultralytics "numpy<2" --break-system-packages # !TODO: use Venv in the future
 
-# CLONE TB3_YOLO_PC
+# CLONE TB3_YOLO
 cd $HOME
 git clone https://github.com/laiyankai/tb3_yolo
 cd $HOME/tb3_yolo
