@@ -31,11 +31,11 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 # get next script
 cd $HOME
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot2.sh
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot3.sh
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/flash.sh
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/robot.sh
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/camera.sh
+wget -O install_tbot2.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot2.sh
+wget -O install_tbot3.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/install_tbot3.sh
+wget -O flash.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/flash.sh
+wget -O robot.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/robot.sh
+wget -O camera.sh https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/camera.sh
 
 chmod +x *.sh
 
