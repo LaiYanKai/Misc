@@ -50,7 +50,7 @@ cd $HOME/camera_ws/src
 git clone https://github.com/raspberrypi/libcamera.git 
 git clone https://github.com/christianrauch/camera_ros.git 
 cd $HOME/camera_ws/src/libcamera
-git reset --hard bfd68f786964636b09f8122e6c09c230367390e7 # reset to earlier commit for camera to work
+# git reset --hard bfd68f786964636b09f8122e6c09c230367390e7 # reset to earlier commit for camera to work
 
 
 # Begin building from ROS (Underlay)
