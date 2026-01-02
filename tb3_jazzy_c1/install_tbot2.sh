@@ -26,9 +26,9 @@ mkdir -p $HOME/rplidar_ws/src
 cd $HOME/rplidar_ws/src
 git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 
-# Apply 15cm to 5cm min lidar range (quick hack. range may not be accurate when <0.1m)
-cd $HOME/rplidar_ws/src/rplidar_ros/src
-wget -O rplidar_node.cpp https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/rplidar_node.cpp
+# # Apply 15cm to 5cm min lidar range (quick hack. range may not be accurate when <0.1m)
+# cd $HOME/rplidar_ws/src/rplidar_ros/src
+# wget -O rplidar_node.cpp https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/rplidar_node.cpp
 
 # Clone Turtle
 rm -rf $HOME/turtlebot3_ws
@@ -42,7 +42,7 @@ rm -r turtlebot3_cartographer turtlebot3_navigation2
 
 # Copy the launch file for rplidar C1 into Turtle
 cd $HOME/turtlebot3_ws/src/turtlebot3/turtlebot3_bringup/launch
-wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1_cam3/robot_c1_cam3.launch.py
+wget https://raw.githubusercontent.com/LaiYanKai/Misc/main/tb3_jazzy_c1/robot_c1.launch.py
 
 # Camera libs
 mkdir -p $HOME/camera_ws/src
