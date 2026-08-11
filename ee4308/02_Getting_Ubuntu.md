@@ -17,7 +17,7 @@ Prepare for the installation of Ubuntu 24.04.
 | Who? | These instructions are for dual boot and single boot. Skip this section if VirtualBox will be used. |
 | Reference | The instructions are based on https://ubuntu.com/tutorials/install-ubuntu-desktop. |
 
-1. Download the Ubuntu 24.04  `.iso` disk image (5.9GB) from https://ubuntu.com/download/desktop.
+1. Download the Ubuntu 24.04  `.iso` **Desktop** image (6.2GB) from https://releases.ubuntu.com/noble/.
     
     ![](img/rb001.png)
 
