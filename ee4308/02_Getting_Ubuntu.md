@@ -1,7 +1,7 @@
 2&emsp;Getting Ubuntu
 ==============
 Prepare for the installation of Ubuntu 24.04.
-- A ~5.9GB Ubuntu 24.04 `.iso` disk image has to be downloaded.
+- A ~6.2GB Ubuntu 24.04 `.iso` disk image has to be downloaded.
 - If single booting and dual booting, an 8GB USB stick is needed.
 
 # Table of Contents
@@ -17,9 +17,9 @@ Prepare for the installation of Ubuntu 24.04.
 | Who? | These instructions are for dual boot and single boot. Skip this section if VirtualBox will be used. |
 | Reference | The instructions are based on https://ubuntu.com/tutorials/install-ubuntu-desktop. |
 
-1. Download the Ubuntu 24.04  `.iso` **Desktop** image (6.2GB) from https://releases.ubuntu.com/noble/.
+1. Download the Ubuntu 24.04  `.iso` **Desktop** image (24.04.4: 6.2GB) from https://releases.ubuntu.com/noble/.
     
-    ![](img/rb001.png)
+    <!-- ![](img/rb001.png) -->
 
 2. Find a USB stick that is at least 8GB. **ATTENTION!** The USB stick's contents will be erased entirely.
 
