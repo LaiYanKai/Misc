@@ -105,34 +105,21 @@ Install Software in Ubuntu 24.04.
 1. Open a terminal. Run the following commands, key in your password and press `Enter` when prompted:
     ```bash
     sudo apt install software-properties-common -y
-
     sudo add-apt-repository universe
     ```
-2. Continue running the commands. The brown text at the bottom indicates download progress. The green bar indicates installation progress after downloading. Both bar for `sudo apt upgrade -y`, and again for `sudo apt install ...`. This process will transfer about 1.1 GB of data and take between 10 to 30 minutes.
+2. Continue running the commands. The brown / yellow text at the bottom indicates download progress. After the download completes, the green bar indicates installation progress. The bars will appear when running `sudo apt upgrade -y` and `sudo apt install ...`. This process will transfer about more than 1 GB of data and take between 10 to 30 minutes.
     ```bash
-
-    sudo apt update
-
-    sudo apt install curl -y
-
-    export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
-
-    curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo $VERSION_CODENAME)_all.deb"
-
+    sudo apt update && sudo apt install curl -y
+    export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F'"' '{print $4}')
+    curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
     sudo dpkg -i /tmp/ros2-apt-source.deb
-
     sudo apt update 
-
     sudo apt upgrade -y
-
     sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz -y
     # sudo apt install ros-jazzy-desktop ros-dev-tools ros-jazzy-ros-gz ros-jazzy-turtlebot3-gazebo ros-jazzy-turtlebot3-teleop ros-jazzy-turtlebot3-cartographer ros-jazzy-nav2-map-server ros-jazzy-turtlebot3-navigation2 ros-jazzy-nav2-route -y
+    # echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc
+    # source ~/.bashrc
     ```
-
-    <!-- 
-    echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc
-    source ~/.bashrc
-    -->
 
 3.  We will inform all new terminals that ROS2 Jazzy and its command line interfaces can be found at its installation directory by modifying the `.bashrc` file. The `.bashrc` file is run everytime a new terminal opens.
     
